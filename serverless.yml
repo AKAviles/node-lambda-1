@@ -3,6 +3,11 @@ app: node-lambda-1
 service: node-lambda-1
 frameworkVersion: "3"
 
+plugins:
+  importApiGateway:
+    name: SharedGW
+    path: /
+
 provider:
   name: aws
   runtime: nodejs18.x

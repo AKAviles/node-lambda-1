@@ -1,0 +1,5 @@
+{
+  "devDependencies": {
+    "serverless-import-apigateway": "^1.1.1"
+  }
+}
