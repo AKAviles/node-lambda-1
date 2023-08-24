@@ -8,14 +8,14 @@ provider:
   runtime: nodejs18.x
   apiGateway:
     restApiId:
-      Fn::ImportValue: SharedGW-restApiId
+      "Fn::ImportValue": SharedGW-restApiId
     restApiRootResourceId:
-      Fn::ImportValue: SharedGW-rootResourceId
+      "Fn::ImportValue": SharedGW-rootResourceId
 
 functions:
   products:
     handler: index.handler
     events:
       - httpApi:
-          path: products
+          path: /products
           method: get
