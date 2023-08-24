@@ -9,7 +9,7 @@ provider:
   region: us-east-1
   apiGateway:
     restApiId: ${cf:shared-gateway-dev.apiGatewayRestApiId}
-    restApiRootResourceId: !Ref rApieGatewayProducts
+    restApiRootResourceId: !Ref rApiGatewayProducts
 
 functions:
   products:
