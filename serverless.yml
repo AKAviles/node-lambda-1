@@ -3,19 +3,12 @@ app: node-lambda-1
 service: node-lambda-1
 frameworkVersion: "3"
 
-plugins:
-  importApiGateway:
-    name: SharedGW
-    path: /
-
 provider:
   name: aws
   runtime: nodejs18.x
   apiGateway:
-    restApiId:
-      "Fn::ImportValue": SharedGW-restApiId
-    restApiRootResourceId:
-      "Fn::ImportValue": SharedGW-rootResourceId
+    restApiId: 1sv4m5x2jl
+    restApiRootResourceId: qoseq49m7l
 
 functions:
   products:
