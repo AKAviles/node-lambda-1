@@ -6,6 +6,7 @@ frameworkVersion: "3"
 provider:
   name: aws
   runtime: nodejs18.x
+  region: us-east-1
   apiGateway:
     restApiId: ${cf:shared-gateway-dev.apiGatewayRestApiId}
     restApiRootResourceId: ${cf:shared-gateway-dev.apiGatewayRestApiRootResourceId}
@@ -14,6 +15,6 @@ functions:
   products:
     handler: index.handler
     events:
-      - httpApi:
-          path: /products
+      - http:
+          path: products
           method: get
