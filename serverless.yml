@@ -27,12 +27,11 @@ resources:
           ParentId: ${cf:shared-gateway-dev.apiGatewayRestApiRootResourceId}
           PathPart: products
           RestApiId: ${cf:shared-gateway-dev.apiGatewayRestApiId}
-
-- Outputs:
-    oApiGatewayProductsId:
-      Value:
-        Ref: rApiGatewayProducts
-      Export:
-        Name: products-apigateway
+      Outputs:
+        oApiGatewayProductsId:
+          Value:
+            Ref: rApiGatewayProducts
+         Export:
+            Name: products-apigateway
 
 
