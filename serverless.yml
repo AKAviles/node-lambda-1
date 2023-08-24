@@ -20,16 +20,16 @@ functions:
           method: get
 
 resources:
-  Resources:
-    rApiGatewayProducts:
-      Type: AWS::ApiGateway::Resource
-      Properties:
-        ParentId: ${cf:shared-gateway-dev.apiGatewayRestApiRootResourceId}
-        PathPart: products
-        RestApiId: ${cf:shared-gateway-dev.apiGatewayRestApiId}
-Outputs:
-  oApiGatewayProductsId:
-    Value:
-      Ref: rApiGatewayProducts
-    Export:
-      Name: products-apigateway
+  - Resources:
+      rApiGatewayProducts:
+        Type: AWS::ApiGateway::Resource
+        Properties:
+          ParentId: ${cf:shared-gateway-dev.apiGatewayRestApiRootResourceId}
+          PathPart: products
+          RestApiId: ${cf:shared-gateway-dev.apiGatewayRestApiId}
+  - Outputs:
+      oApiGatewayProductsId:
+        Value:
+          Ref: rApiGatewayProducts
+        Export:
+          Name: products-apigateway
