@@ -31,7 +31,5 @@ resources:
         oApiGatewayProductsId:
           Value:
             Ref: rApiGatewayProducts
-         Export:
+          Export:
             Name: products-apigateway
-
-
