@@ -15,5 +15,5 @@ functions:
     handler: index.handler
     events:
       - httpApi:
-          path: products
+          path: /products
           method: get
