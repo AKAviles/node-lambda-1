@@ -13,9 +13,9 @@ provider:
       "Fn::ImportValue": SharedGW-rootResourceId
 
 functions:
-  get1:
+  products:
     handler: index.handler
     events:
       - httpApi:
-          path: ""
+          path: /
           method: get
