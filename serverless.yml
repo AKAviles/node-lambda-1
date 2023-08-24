@@ -9,12 +9,30 @@ provider:
   region: us-east-1
   apiGateway:
     restApiId: ${cf:shared-gateway-dev.apiGatewayRestApiId}
-    restApiRootResourceId: ${cf:shared-gateway-dev.apiGatewayRestApiRootResourceId}
+    restApiRootResourceId: !Ref rApieGatewayProducts
 
 functions:
   products:
     handler: index.handler
     events:
       - http:
-          path: products
+          path: ""
           method: get
+
+resources:
+  - Resources:
+      rApiGatewayProducts:
+        Type: AWS::ApiGateway::Resource
+        Properties:
+          ParentId: ${cf:shared-gateway-dev.apiGatewayRestApiRootResourceId}
+          PathPart: products
+          RestApiId: ${cf:shared-gateway-dev.apiGatewayRestApiId}
+
+- Outputs:
+    oApiGatewayProductsId:
+      Value:
+        Ref: rApiGatewayProducts
+      Export:
+        Name: products-apigateway
+
+
