@@ -7,15 +7,13 @@ provider:
   name: aws
   runtime: nodejs18.x
   apiGateway:
-    restApiId:
-      "Fn::ImportValue": SharedGW-restApiId
-    restApiRootResourceId:
-      "Fn::ImportValue": SharedGW-rootResourceId
+    restApiId: ${cf:shared-gateway-dev.apiGatewayRestApiId}
+    restApiRootResourceId: ${cf:shared-gateway-dev.apiGatewayRestApiRootResourceId}
 
 functions:
   products:
     handler: index.handler
     events:
       - httpApi:
-          path: /products
+          path: products
           method: get
